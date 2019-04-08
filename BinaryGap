@@ -1,0 +1,22 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(N):
+    binaryNumber = bin(N)[2:]
+    numberOneListIndex = []
+    numberZeroListIndex =[]
+    Answer =[]
+    for i in range(len(binaryNumber)):
+        if binaryNumber[i] == "1":
+            numberOneListIndex.append(i)
+        else:
+            numberZeroListIndex.append(i)
+    if(len(numberOneListIndex)== 1):
+        return 0
+    for i in range(len(numberOneListIndex)-1):
+        Answer.append(numberOneListIndex[i+1]-numberOneListIndex[i]-1)
+    if(Answer == []):
+        return 0
+    Longest = max(Answer)
+    return Longest
+    pass
