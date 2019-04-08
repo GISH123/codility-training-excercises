@@ -1,0 +1,10 @@
+def solution(A):
+    if (len(A)<2): return A[0]
+    sortedA = A
+    sortedA.sort()
+    if (sortedA[0]!=sortedA[1]): return sortedA[0]
+    for i in range(0,len(sortedA),2):
+        if(i==len(sortedA)-1): return sortedA[i]
+        elif sortedA[i]!=sortedA[i+1]:
+            return sortedA[i]
+pass
