@@ -1,0 +1,8 @@
+def solution(A, K):
+    if A == []:
+        return []
+    standardK = K%len(A)
+    doubleA = list(A)
+    doubleA.extend(A)
+    return doubleA[len(A)-standardK:(2*len(A)-standardK)]
+pass
