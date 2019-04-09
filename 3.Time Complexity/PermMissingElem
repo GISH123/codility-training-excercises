@@ -1,0 +1,9 @@
+def solution(A):
+    N = len(A)+1
+    sum = int((N*(N+1))/2)
+    for i in A:
+        sum -= i
+    return int(sum)
+    pass
+   
+#參考網路上別人的數學解法的，不然我原始的解法，時間複雜度太高(小聲)
