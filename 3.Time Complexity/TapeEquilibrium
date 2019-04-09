@@ -1,0 +1,13 @@
+import math
+def solution(A):
+    differenceList = []
+    lastDifference = math.inf
+    for i in range(len(A)):
+        arrayOne = A[:i+1]
+        arrayTwo = A[i+1:len(A)]
+        difference = abs(sum(arrayOne)-sum(arrayTwo))
+        if difference <= lastDifference:
+            lastDifference = difference
+    return lastDifference
+    pass
+ #O(N*N) version bad perforamce
