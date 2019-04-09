@@ -2,12 +2,18 @@ import math
 def solution(A):
     differenceList = []
     lastDifference = math.inf
+    sumLeft = 0
+    sumRight = 0
     for i in range(len(A)):
-        arrayOne = A[:i+1]
-        arrayTwo = A[i+1:len(A)]
-        difference = abs(sum(arrayOne)-sum(arrayTwo))
+        sumRight += A[i]
+    
+    for i in range(len(A)-1):
+        sumLeft += A[i]
+        sumRight -= A[i]
+        difference = abs(sumLeft - sumRight)
         if difference <= lastDifference:
             lastDifference = difference
     return lastDifference
     pass
- #O(N*N) version bad perforamce
+    
+    #https://app.codility.com/demo/results/trainingNVV4C6-79U/
