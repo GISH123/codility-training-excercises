@@ -1,0 +1,8 @@
+def solution(X, Y, D):
+    pos = X
+    if((Y-X)%D != 0):
+        count = int((Y-X)/D)+1
+    else:
+        count = int((Y-X)/D)
+    return count
+    pass
