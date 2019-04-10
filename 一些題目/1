@@ -1,0 +1,26 @@
+def solution(A):
+    errorTreeList = []
+    for i in range(len(A)):
+        for j in range(i+1,len(A)):
+            if A[i]>A[j]:
+                #non increasing order
+                errorTreeList.append(i)
+#    print(errorTreeList)
+    uniqueErrorList = set(errorTreeList)
+   # print(uniqueErrorList)
+    if len(uniqueErrorList)==1:
+        listA = list(uniqueErrorList)
+        #print(listA)
+        #print(A[listA[0]-1],A[listA[0]],A[listA[0]+1])
+        #print(listA[0]-1)
+        if(listA[0]-1>0 and listA[0]>0 and listA[0]+1>0):
+           if(A[listA[0]-1]<A[listA[0]] and A[listA[0]+1]<A[listA[0]]):
+              return 2
+        else:   
+            return 1
+    elif len(uniqueErrorList) >=2:
+        return 0
+    elif len(uniqueErrorList) ==0:
+        return len(A)
+        
+    pass
