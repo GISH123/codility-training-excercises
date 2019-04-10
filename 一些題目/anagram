@@ -1,0 +1,30 @@
+import string
+
+def solution(A, B):
+    # write your code in Python 3.6
+    # len(A) = N, len(B) = M
+    dA = dict.fromkeys(string.ascii_lowercase, 0)
+    dB = dict.fromkeys(string.ascii_lowercase, 0)
+    sum = 0
+    for i in range(len(A)):
+       dA["{0}".format(A[i])] += 1
+    for i in range(len(B)):
+       dB["{0}".format(B[i])] += 1
+    for key ,val in dA.items():
+        sum += abs(dA.get(key)-dB.get(key))
+        #sum(dA[key]-dB[key])
+    return sum
+    pass
+
+
+
+
+   # for i in B:
+    #    if i is in A:
+     #       Blist.append(B[i])
+            
+
+
+
+
+
